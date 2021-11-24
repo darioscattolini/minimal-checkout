@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material/dialog'; 
+import { MatToolbarModule } from '@angular/material/toolbar'; 
 
 import { AppComponent } from './components/app/app.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
@@ -14,7 +16,9 @@ import { ArticleComponent } from './components/article/article.component';
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatDialogModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
