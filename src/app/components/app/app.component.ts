@@ -15,6 +15,7 @@ export class AppComponent implements OnInit {
     // Checkout dialog should be triggered by user interaction instead of Init event
     // Article data should be retrieved by service from back-end
     const data: ArticleCheckoutData = {
+      id: '00012345',
       name: 'MacBook Air',
       price: '$899.00',
       imgPath: 'macbook-air.jpg'

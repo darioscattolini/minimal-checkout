@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CreditCardInputComponent } from './credit-card-input.component';
+import { CreditCardFormComponent } from './credit-card-form.component';
 
 describe('CreditCardInputComponent', () => {
-  let component: CreditCardInputComponent;
-  let fixture: ComponentFixture<CreditCardInputComponent>;
+  let component: CreditCardFormComponent;
+  let fixture: ComponentFixture<CreditCardFormComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CreditCardInputComponent ]
+      declarations: [ CreditCardFormComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CreditCardInputComponent);
+    fixture = TestBed.createComponent(CreditCardFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

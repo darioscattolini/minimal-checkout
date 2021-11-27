@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -14,15 +15,16 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { AppComponent } from './components/app/app.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { ArticleComponent } from './components/article/article.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CreditCardInputComponent } from './components/credit-card-input/credit-card-input.component';
+import { 
+  CreditCardFormComponent 
+} from './components/credit-card-input/credit-card-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CheckoutComponent,
     ArticleComponent,
-    CreditCardInputComponent
+    CreditCardFormComponent
   ],
   imports: [
     BrowserModule,

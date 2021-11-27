@@ -1,3 +1,11 @@
+<div class="right">
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Email</mat-label>
+    <input matInput placeholder="johnsmith@gmail.com" [formControl]="email" required>
+    <mat-error *ngIf="email.invalid">{{ getErrorMessage('email') }}</mat-error>
+  </mat-form-field>
+</div>
+
 <mat-form-field class="full-width" appearance="outline">
   <mat-label>Card number</mat-label>
   <input matInput placeholder="1234 1234 1234 1234" [formControl]="cardNumber" required>
@@ -23,3 +31,15 @@
   <input matInput placeholder="John Smith" [formControl]="cardName" required>
   <mat-error *ngIf="cardName.invalid">{{ getErrorMessage('cardName') }}</mat-error>
 </mat-form-field>
+
+<div class="right">
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Country or region</mat-label>
+    <mat-select [formControl]="country" required>
+      <mat-option *ngFor="let country of countries" value="country.code">
+        {{ country.name }}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="country.invalid">{{ getErrorMessage('country') }}</mat-error>
+  </mat-form-field>
+</div>
