@@ -20,5 +20,15 @@ export class CheckoutComponent {
   
   public pay(method: 'apple-pay' | 'card') {
     const article = this.article.id;
+
+    if (method === 'apple-pay') {
+      alert(`Bought article id: ${article}. Should redirect to Apple Pay.`);
+    } else {
+      const cardData = this.creditCard.getValues();
+      alert(
+        `Bought article id: ${article}.
+        The following card data should be sent to back-end: ${JSON.stringify(cardData, undefined, 2)}`
+      );
+    }
   }
 }
