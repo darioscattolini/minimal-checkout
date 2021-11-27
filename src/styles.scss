@@ -22,8 +22,21 @@ $minimal-checkout-theme: mat.define-light-theme((
 
 @include mat.all-component-themes($minimal-checkout-theme);
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 * {
   box-sizing: border-box;
+}
+
+html, body { height: 100%; }
+
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+a {
+  color: #71757e;
+  text-decoration: none;
+}
+
+a:hover,
+a:active {
+  color: rgb(0, 102, 204);
+  text-decoration: underline;
 }
