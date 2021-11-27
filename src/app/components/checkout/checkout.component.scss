@@ -10,11 +10,12 @@ $horizontal-gap: 1em;
   display: flex;
   flex-direction: row;
   margin-bottom: 2em;
+  color: #71757e;
 }
 .sidelines:before, .sidelines:after{
   content: "";
   flex: 1 1;
-  border-bottom: 1px solid;
+  border-bottom: 1px solid #989fac;
   margin: auto;
 }
 .sidelines:before {
