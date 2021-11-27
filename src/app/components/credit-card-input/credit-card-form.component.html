@@ -1,45 +1,91 @@
-<div class="right">
-  <mat-form-field appearance="outline" class="full-width">
-    <mat-label>Email</mat-label>
-    <input matInput placeholder="johnsmith@gmail.com" [formControl]="email" required>
-    <mat-error *ngIf="email.invalid">{{ getErrorMessage('email') }}</mat-error>
-  </mat-form-field>
-</div>
+<mat-form-field appearance="outline" class="full-width">
+  <mat-label>Email</mat-label>
+  
+  <input matInput 
+    placeholder="johnsmith@gmail.com" 
+    [formControl]="email" 
+    required
+  >
+  
+  <mat-error *ngIf="email.invalid">
+    {{ getErrorMessage('email') }}
+  </mat-error>
+</mat-form-field>
 
 <mat-form-field class="full-width" appearance="outline">
   <mat-label>Card number</mat-label>
-  <input matInput placeholder="1234 1234 1234 1234" [formControl]="cardNumber" required>
-  <mat-error *ngIf="cardNumber.invalid">{{ getErrorMessage('cardNumber') }}</mat-error>
+  
+  <input matInput 
+    placeholder="1234 1234 1234 1234" 
+    [formControl]="cardNumber" 
+    required
+  >
+  
+  <mat-error *ngIf="cardNumber.invalid">
+    {{ getErrorMessage('cardNumber') }}
+  </mat-error>
 </mat-form-field>
 
 <div class="row">
   <mat-form-field appearance="outline">
     <mat-label>Expires on</mat-label>
-    <input matInput placeholder="MM/AA" [formControl]="expirationDate" required>
-    <mat-error *ngIf="expirationDate.invalid">{{ getErrorMessage('expirationDate') }}</mat-error>
+    
+    <input matInput 
+      placeholder="MM/AA" 
+      [formControl]="expirationDate" 
+      required
+    >
+    
+    <mat-error *ngIf="expirationDate.invalid">
+      {{ getErrorMessage('expirationDate') }}
+    </mat-error>
   </mat-form-field>
 
   <mat-form-field appearance="outline">
     <mat-label>{{ cvvLabel }}</mat-label>
-    <input matInput placeholder="123" [formControl]="cvv" required>
-    <mat-error *ngIf="cvv.invalid">{{ getErrorMessage('cvv') }}</mat-error>
+    
+    <input matInput 
+      placeholder="123" 
+      [formControl]="cvv" 
+      required
+    >
+    
+    <mat-error *ngIf="cvv.invalid">
+      {{ getErrorMessage('cvv') }}
+    </mat-error>
   </mat-form-field>
 </div>
 
 <mat-form-field class="full-width" appearance="outline">
   <mat-label>Name on card</mat-label>
-  <input matInput placeholder="John Smith" [formControl]="cardName" required>
-  <mat-error *ngIf="cardName.invalid">{{ getErrorMessage('cardName') }}</mat-error>
+  
+  <input matInput 
+    placeholder="John Smith" 
+    [formControl]="cardName" 
+    required
+  >
+  
+  <mat-error *ngIf="cardName.invalid">
+    {{ getErrorMessage('cardName') }}
+  </mat-error>
 </mat-form-field>
 
-<div class="right">
-  <mat-form-field appearance="outline" class="full-width">
-    <mat-label>Country or region</mat-label>
-    <mat-select [formControl]="country" required>
-      <mat-option *ngFor="let country of countries" value="country.code">
-        {{ country.name }}
-      </mat-option>
-    </mat-select>
-    <mat-error *ngIf="country.invalid">{{ getErrorMessage('country') }}</mat-error>
-  </mat-form-field>
-</div>
+<mat-form-field appearance="outline" class="full-width">
+  <mat-label>Country or region</mat-label>
+  
+  <mat-select [formControl]="country" required>
+    <mat-option *ngFor="let country of countries" value="{{ country.code }}">
+      {{ country.name }}
+    </mat-option>
+  </mat-select>
+  
+  <mat-error *ngIf="country.invalid">
+    {{ getErrorMessage('country') }}
+  </mat-error>
+</mat-form-field>
+
+<mat-form-field class="full-width" appearance="outline">
+  <mat-label>Zip Code</mat-label>
+  
+  <input matInput placeholder="40170" [formControl]="zipCode">
+</mat-form-field>

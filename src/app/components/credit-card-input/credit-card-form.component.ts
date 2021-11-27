@@ -57,6 +57,8 @@ export class CreditCardFormComponent implements OnInit {
     return controls.every(control => control.valid);
   }
 
+  public zipCode = new FormControl('');
+
   constructor(
     private countriesService: CountriesService
   ) { }
@@ -87,10 +89,18 @@ export class CreditCardFormComponent implements OnInit {
     const {
       year: expirationYear, 
       month: expirationMonth
-    } = expirationDate(this.expirationDate.value);
+    } = expirationDate(this.expirationDate.value, 100);
+    const zipCode = this.zipCode.value;
     
     return {
-      cardName, cardNumber, cvv, country, email, expirationYear, expirationMonth
+      cardName, 
+      cardNumber, 
+      cvv, 
+      country, 
+      email, 
+      expirationYear, 
+      expirationMonth,
+      zipCode
     }
   }
 
