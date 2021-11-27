@@ -32,7 +32,7 @@ export class CreditCardFormComponent implements OnInit {
 
   public cvv = new FormControl('', [Validators.required]);
 
-  public get cvvLabel() {
+  public get cvvLabel(): string {
     const label = number(this.cardNumber.value).card?.code.name;
     
     return label ? label : 'CVV';
@@ -43,6 +43,19 @@ export class CreditCardFormComponent implements OnInit {
   ]);
 
   public expirationDate = new FormControl('', [Validators.required]);
+
+  public get isValid(): boolean {
+    const controls = [
+      this.cardName, 
+      this.cardNumber, 
+      this.country, 
+      this.cvv, 
+      this.email, 
+      this.expirationDate
+    ];
+
+    return controls.every(control => control.valid);
+  }
 
   constructor(
     private countriesService: CountriesService
@@ -115,7 +128,7 @@ export class CreditCardFormComponent implements OnInit {
       .subscribe(countries => this.countries = countries);
   }
 
-  private getCountryError() {
+  private getCountryError(): string {
     return this.country.hasError('required') 
       ? 'Required field' 
       : '';

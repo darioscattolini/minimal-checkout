@@ -22,7 +22,8 @@
 
   <button mat-raised-button 
     color="primary" 
-    (click)="pay('card')" 
+    (click)="pay('card')"
+    [disabled]="!creditCard.isValid"
     class="right full-width"
   >
     Pay {{ article.price }}
