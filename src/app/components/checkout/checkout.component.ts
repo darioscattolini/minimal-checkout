@@ -1,5 +1,7 @@
 import { Component, Inject, ViewChild } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatIconRegistry } from '@angular/material/icon';
+import { DomSanitizer } from '@angular/platform-browser';
 import { ArticleCheckoutData } from 'src/models/models';
 import { 
   CreditCardFormComponent 
@@ -16,7 +18,13 @@ export class CheckoutComponent {
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public article: ArticleCheckoutData,
-  ) { }
+    iconRegistry: MatIconRegistry,
+    sanitizer: DomSanitizer
+  ) {
+    const url = sanitizer
+      .bypassSecurityTrustResourceUrl('assets/images/apple-logo.svg');
+    iconRegistry.addSvgIcon('apple_logo', url);
+  }
   
   public pay(method: 'apple-pay' | 'card') {
     const article = this.article.id;
