@@ -1,0 +1,64 @@
+
+$horizontal-gap: 1em;
+
+.full-width {
+  width: 100%;
+}
+
+/*** "Or pay with card" sidelines ***/
+
+.sidelines {
+  display: flex;
+  flex-direction: row;
+}
+.sidelines:before, .sidelines:after{
+  content: "";
+  flex: 1 1;
+  border-bottom: 1px solid;
+  margin: auto;
+}
+.sidelines:before {
+  margin-right: $horizontal-gap
+}
+.sidelines:after {
+  margin-left: $horizontal-gap
+}
+
+
+/*** Powered by RedSys ***/
+
+.redsys {
+  margin-top: 1em;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  font-size: 0.9em;
+}
+
+.redsys * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.redsys img {
+  height: 1.5em;
+  vertical-align: bottom;
+  position: relative;
+  bottom: 2px;
+}
+
+.redsys .separator {
+  margin-left: $horizontal-gap;
+  margin-right: $horizontal-gap;
+}
+
+.redsys ul {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+}
+
+.redsys ul li:not(:last-child) {
+  margin-right: $horizontal-gap;
+}

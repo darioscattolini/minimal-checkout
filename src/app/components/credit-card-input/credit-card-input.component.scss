@@ -1,0 +1,12 @@
+.full-width {
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.row > * {
+  width: 49%;
+}

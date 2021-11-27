@@ -1,2 +1,59 @@
-<p>checkout works!</p>
-<app-article [article]="article"></app-article>
+<mat-dialog-content>
+  <p class="left">
+    <a mat-button [matDialogClose]>
+      <mat-icon aria-label="Back to the market">arrow_back</mat-icon>
+      Back to the market
+    </a>
+  </p>
+  
+  <app-article [article]="article" class="left"></app-article>
+  
+  <button mat-raised-button 
+    color="primary" 
+    (click)="pay('apple-pay')" 
+    class="right full-width"
+  >
+    Pay
+  </button>
+  
+  <p class="right sidelines">Or pay with card</p>
+  
+  <div class="right">
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="johnsmith@gmail.com" [formControl]="email" required>
+      <mat-error *ngIf="email.invalid">{{ getErrorMessage('email') }}</mat-error>
+    </mat-form-field>
+  </div>
+  
+  <app-credit-card-input class="right"></app-credit-card-input>
+
+  <div class="right">
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Country or region</mat-label>
+      <mat-select [formControl]="country" required>
+        <mat-option *ngFor="let country of countries" value="country.code">
+          {{ country.name }}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="country.invalid">{{ getErrorMessage('country') }}</mat-error>
+    </mat-form-field>
+  </div>
+
+  <button mat-raised-button 
+    color="primary" 
+    (click)="pay('card')" 
+    class="right full-width"
+  >
+    Pay {{ article.price }}
+  </button>
+  
+  <div class="left redsys">
+    <p>Powered by <img src="assets/images/redsys.png"></p>
+    <p class="separator">|</p>
+    <ul>
+      <li><a href="https://www.redsys.es/">Terms</a></li>
+      <li><a href="https://www.redsys.es/">Policy</a></li>
+    </ul>
+  </div>
+</mat-dialog-content>

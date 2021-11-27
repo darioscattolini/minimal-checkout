@@ -1,0 +1,25 @@
+<mat-form-field class="full-width" appearance="outline">
+  <mat-label>Card number</mat-label>
+  <input matInput placeholder="1234 1234 1234 1234" [formControl]="cardNumber" required>
+  <mat-error *ngIf="cardNumber.invalid">{{ getErrorMessage('cardNumber') }}</mat-error>
+</mat-form-field>
+
+<div class="row">
+  <mat-form-field appearance="outline">
+    <mat-label>Expires on</mat-label>
+    <input matInput placeholder="MM/AA" [formControl]="expirationDate" required>
+    <mat-error *ngIf="expirationDate.invalid">{{ getErrorMessage('expirationDate') }}</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>{{ cvvLabel }}</mat-label>
+    <input matInput placeholder="123" [formControl]="cvv" required>
+    <mat-error *ngIf="cvv.invalid">{{ getErrorMessage('cvv') }}</mat-error>
+  </mat-form-field>
+</div>
+
+<mat-form-field class="full-width" appearance="outline">
+  <mat-label>Name on card</mat-label>
+  <input matInput placeholder="John Smith" [formControl]="cardName" required>
+  <mat-error *ngIf="cardName.invalid">{{ getErrorMessage('cardName') }}</mat-error>
+</mat-form-field>
