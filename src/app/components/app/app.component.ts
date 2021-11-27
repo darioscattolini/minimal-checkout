@@ -21,6 +21,9 @@ export class AppComponent implements OnInit {
       imgPath: 'macbook-air.jpg'
     };
 
-    this.dialog.open(CheckoutComponent, { data });
+    this.dialog.open(CheckoutComponent, { 
+      data,
+      panelClass: 'checkout-dialog'
+     });
   }
 }

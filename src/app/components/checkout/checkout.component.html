@@ -1,40 +1,44 @@
 <mat-dialog-content>
-  <p class="left">
-    <a mat-button [matDialogClose]>
-      <mat-icon aria-label="Back to the market">arrow_back</mat-icon>
-      Back to the market
-    </a>
-  </p>
+  <div>
+    <p class="back-to-market">
+      <a mat-button [matDialogClose]>
+        <mat-icon aria-label="Back to the market">arrow_back</mat-icon>
+        Back to the market
+      </a>
+    </p>
+    
+    <app-article [article]="article"></app-article>
+  </div>
   
-  <app-article [article]="article" class="left"></app-article>
-  
-  <button mat-raised-button 
-    color="primary" 
-    (click)="pay('apple-pay')" 
-    class="right full-width pay-button"
-  >
-    Pay
-  </button>
-  
-  <p class="right sidelines">Or pay with card</p>
-  
-  <app-credit-card-form #creditCard class="right"></app-credit-card-form>
+  <div>
+    <button mat-raised-button 
+      color="primary" 
+      (click)="pay('apple-pay')" 
+      class="full-width pay-button"
+    >
+      Pay
+    </button>
+    
+    <p class="sidelines">Or pay with card</p>
+    
+    <app-credit-card-form #creditCard></app-credit-card-form>
 
-  <button mat-raised-button 
-    color="primary" 
-    (click)="pay('card')"
-    [disabled]="!creditCard.isValid"
-    class="right full-width pay-button"
-  >
-    Pay {{ article.price }}
-  </button>
-  
-  <div class="left redsys">
-    <p>Powered by <img src="assets/images/redsys.png"></p>
-    <p class="separator">|</p>
-    <ul>
-      <li><a href="https://www.redsys.es/">Terms</a></li>
-      <li><a href="https://www.redsys.es/">Policy</a></li>
-    </ul>
+    <button mat-raised-button 
+      color="primary" 
+      (click)="pay('card')"
+      [disabled]="!creditCard.isValid"
+      class="full-width pay-button"
+    >
+      Pay {{ article.price }}
+    </button>
+    
+    <div class="redsys">
+      <p>Powered by <img src="assets/images/redsys.png"></p>
+      <p class="separator">|</p>
+      <ul>
+        <li><a href="https://www.redsys.es/">Terms</a></li>
+        <li><a href="https://www.redsys.es/">Policy</a></li>
+      </ul>
+    </div>
   </div>
 </mat-dialog-content>

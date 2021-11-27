@@ -4,6 +4,11 @@
   text-align: center;
 }
 
+img {
+  max-width: min(100%, 400px);
+  margin: auto;
+}
+
 .name {
   font-size: 1.2em;
   font-weight: 500;
