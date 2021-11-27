@@ -34,7 +34,7 @@ export class CountriesService {
       .map(country => {
         return {
           name: country.name.common,
-          code: country.ccn3
+          code: country.cca3
         }
       })
       .sort(

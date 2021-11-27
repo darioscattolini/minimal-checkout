@@ -85,11 +85,11 @@ export class CreditCardFormComponent implements OnInit {
     const cardNumber = this.cardNumber.value;
     const cvv = this.cvv.value;
     const country = this.country.value;
-    const email = this.email.value;   
+    const email = this.email.value;
     const {
       year: expirationYear, 
       month: expirationMonth
-    } = expirationDate(this.expirationDate.value, 100);
+    } = expirationDate(this.expirationDate.value, 70);
     const zipCode = this.zipCode.value;
     
     return {

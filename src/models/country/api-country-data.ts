@@ -4,5 +4,5 @@ export interface ApiCountryData {
     official: string;
     nativeName: Record<string, string>;
   };
-  ccn3: string;
+  cca3: string;
 }
