@@ -22,8 +22,10 @@ export class AppComponent implements OnInit {
     };
 
     this.dialog.open(CheckoutComponent, { 
+      autoFocus: 'first-heading',
       data,
-      panelClass: 'checkout-dialog'
+      disableClose: true,
+      panelClass: 'checkout-dialog',
      });
   }
 }
