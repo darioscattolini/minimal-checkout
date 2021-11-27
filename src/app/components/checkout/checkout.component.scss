@@ -9,6 +9,7 @@ $horizontal-gap: 1em;
 .sidelines {
   display: flex;
   flex-direction: row;
+  margin-bottom: 2em;
 }
 .sidelines:before, .sidelines:after{
   content: "";
@@ -23,6 +24,12 @@ $horizontal-gap: 1em;
   margin-left: $horizontal-gap
 }
 
+
+/*** Pay buttons ***/
+
+.pay-button {
+  margin-bottom: 2em;
+}
 
 /*** Powered by RedSys ***/
 

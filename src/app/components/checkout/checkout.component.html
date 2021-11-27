@@ -11,7 +11,7 @@
   <button mat-raised-button 
     color="primary" 
     (click)="pay('apple-pay')" 
-    class="right full-width"
+    class="right full-width pay-button"
   >
     Pay
   </button>
@@ -24,7 +24,7 @@
     color="primary" 
     (click)="pay('card')"
     [disabled]="!creditCard.isValid"
-    class="right full-width"
+    class="right full-width pay-button"
   >
     Pay {{ article.price }}
   </button>
