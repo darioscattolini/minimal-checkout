@@ -11,8 +11,7 @@ import { CheckoutComponent } from '../checkout/checkout.component';
 export class AppComponent implements OnInit {
   constructor(public dialog: MatDialog) {}
 
-  ngOnInit() {
-    // Checkout dialog should be triggered by user interaction instead of Init event
+  public load() {
     // Article data should be retrieved by service from back-end
     const data: ArticleCheckoutData = {
       id: '00012345',
@@ -27,5 +26,10 @@ export class AppComponent implements OnInit {
       disableClose: true,
       panelClass: 'checkout-dialog',
      });
+  }
+
+  public ngOnInit() {
+    // Checkout dialog should be triggered by user interaction instead of Init event
+    this.load();
   }
 }
