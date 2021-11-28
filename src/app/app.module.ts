@@ -18,13 +18,15 @@ import { ArticleComponent } from './components/article/article.component';
 import { 
   CreditCardFormComponent 
 } from './components/credit-card-input/credit-card-form.component';
+import { CountrySelectorComponent } from './components/country-selector/country-selector.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CheckoutComponent,
     ArticleComponent,
-    CreditCardFormComponent
+    CreditCardFormComponent,
+    CountrySelectorComponent
   ],
   imports: [
     BrowserModule,

@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { 
   AbstractControl, FormControl, ValidatorFn, Validators 
 } from '@angular/forms';
 import { number, expirationDate } from 'card-validator';
-import { CountriesService } from 'src/app/services/countries.service';
-import { CountryData } from 'src/models/models';
+import { 
+  CountrySelectorComponent 
+} from '../country-selector/country-selector.component';
 
 type Field = 
   | 'cardName' 
   | 'cardNumber' 
-  | 'country'
   | 'cvv' 
   | 'email'
   | 'expirationDate';
@@ -19,16 +19,12 @@ type Field =
   templateUrl: './credit-card-form.component.html',
   styleUrls: ['./credit-card-form.component.scss']
 })
-export class CreditCardFormComponent implements OnInit {
+export class CreditCardFormComponent {
   public cardName = new FormControl('', [Validators.required]);
 
   public cardNumber = new FormControl('', [
     Validators.required, this.getCardNumberValidator()
   ]);
-
-  public countries?: CountryData[];
-  
-  public country = new FormControl('', [Validators.required]);
 
   public cvv = new FormControl('', [Validators.required]);
 
@@ -48,7 +44,7 @@ export class CreditCardFormComponent implements OnInit {
     const controls = [
       this.cardName, 
       this.cardNumber, 
-      this.country, 
+      this.country ? this.country.formControl : { valid: false },
       this.cvv, 
       this.email, 
       this.expirationDate
@@ -59,9 +55,7 @@ export class CreditCardFormComponent implements OnInit {
 
   public zipCode = new FormControl('');
 
-  constructor(
-    private countriesService: CountriesService
-  ) { }
+  @ViewChild('country') private country!: CountrySelectorComponent;
 
   public getErrorMessage(error: Field): string {
     switch(error) {
@@ -69,8 +63,6 @@ export class CreditCardFormComponent implements OnInit {
         return this.getCardNameError();
       case 'cardNumber':
         return this.getCardNumberError();
-      case 'country':
-        return this.getCountryError();
       case 'cvv':
         return this.getCvvError();
       case 'email': 
@@ -84,7 +76,7 @@ export class CreditCardFormComponent implements OnInit {
     const cardName = this.cardName.value;
     const cardNumber = this.cardNumber.value;
     const cvv = this.cvv.value;
-    const country = this.country.value;
+    const country = this.country.formControl.value;
     const email = this.email.value;
     const {
       year: expirationYear, 
@@ -102,10 +94,6 @@ export class CreditCardFormComponent implements OnInit {
       expirationMonth,
       zipCode
     }
-  }
-
-  public ngOnInit() {
-    this.getCountries();
   }
 
   private getCardNameError(): string {
@@ -131,17 +119,6 @@ export class CreditCardFormComponent implements OnInit {
       
       return isValid ? null : { cardNumber: { value: input } };
     };
-  }
-
-  private getCountries() {
-    this.countriesService.getCountries()
-      .subscribe(countries => this.countries = countries);
-  }
-
-  private getCountryError(): string {
-    return this.country.hasError('required') 
-      ? 'Required field' 
-      : '';
   }
 
   private getCvvError(): string {
