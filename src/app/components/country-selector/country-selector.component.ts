@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormControl, Validators } from '@angular/forms';
 import { map, shareReplay } from 'rxjs';
-import { ApiCountryData, CountryData } from 'src/models/models';
+import { ApiCountryData, CountryData } from 'src/app/models/models';
 
 type DataTransformer = (countries: ApiCountryData[]) => CountryData[];
 

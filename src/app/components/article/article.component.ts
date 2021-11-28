@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ArticleCheckoutData } from 'src/models/models';
+import { ArticleCheckoutData } from 'src/app/models/models';
 
 @Component({
   selector: 'app-article',

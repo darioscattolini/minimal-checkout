@@ -17,7 +17,7 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
 import { ArticleComponent } from './components/article/article.component';
 import { 
   CreditCardFormComponent 
-} from './components/credit-card-input/credit-card-form.component';
+} from './components/credit-card-form/credit-card-form.component';
 import { CountrySelectorComponent } from './components/country-selector/country-selector.component';
 
 @NgModule({

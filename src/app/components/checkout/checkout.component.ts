@@ -2,10 +2,10 @@ import { Component, Inject, ViewChild } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
-import { ArticleCheckoutData } from 'src/models/models';
+import { ArticleCheckoutData } from 'src/app/models/models';
 import { 
   CreditCardFormComponent 
-} from '../credit-card-input/credit-card-form.component';
+} from '../credit-card-form/credit-card-form.component';
 
 @Component({
   selector: 'app-checkout',

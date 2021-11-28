@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { ArticleCheckoutData } from 'src/models/models';
+import { ArticleCheckoutData } from 'src/app/models/models';
 import { CheckoutComponent } from '../checkout/checkout.component';
 
 @Component({
